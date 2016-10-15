@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<div class="search-results"
+	infinite-scroll
+	[infiniteScrollDistance]="5"
+	[infiniteScrollThrottle]="500"
+    (scrolled)="onScroll()"
+    [scrollWindow]="false">
+    <h1 *ngFor="let data of sampleData">{{data}}</h1>
+</div>
