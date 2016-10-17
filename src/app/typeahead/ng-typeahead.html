@@ -1,0 +1,16 @@
+<div #typeaheadContainer class="typeahead-container typeahead-container-multi typeahead-with-drop typeahead-container-active" style="width: 350px;" title="">
+   <ul class="typeahead-choices" (click)=(focus())><a class="search-choice-close" data-option-array-index="7"></a>
+      <li class="search-choice" *ngFor="let option of selectedOptions">
+         <a class="search-choice-close" (click)=(removeSelected(option))></a>
+         {{option[displayProp]}}
+      </li>
+      <li class="search-field">
+         <input type="text" #typeaheadInput [value]="typeaheadInputVal" placeholder="Choose a Country..." class="" autocomplete="off" [formControl]="searchFilterControl" (keyup.enter)=(focusOut()) tabindex="4">
+      </li>
+   </ul>
+   <div class="typeahead-drop" *ngIf="typeaheadInFocus">
+      <ul class="typeahead-results">
+         <li *ngFor="let option of options"  [ngClass]="{'active-result': !option.isValselected, 'result-selected': option.isValselected}" (click)=(selectOption(option))>{{option[displayProp]}} </li>
+      </ul>
+   </div>
+</div>

@@ -1,3 +1,11 @@
+<ng-typeahead
+	[httpUrl]="httpUrl"
+	[displayValProp]="displayValProp"
+	[selectValProp]="selectValProp"
+	[searchKey]="searchKey"></ng-typeahead><!-- 
+
+<ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="selectedOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+
 <div class="search-results"
 	infinite-scroll
 	[infiniteScrollDistance]="5"
@@ -5,4 +13,4 @@
     (scrolled)="onScroll()"
     [scrollWindow]="false">
     <h1 *ngFor="let data of sampleData">{{data}}</h1>
-</div>
+</div> -->
