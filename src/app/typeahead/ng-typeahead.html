@@ -5,7 +5,7 @@
          {{option[displayProp]}}
       </li>
       <li class="search-field">
-         <input type="text" #typeaheadInput [value]="typeaheadInputVal" placeholder="Choose a Country..." class="" autocomplete="off" [formControl]="searchFilterControl" (keyup.enter)=(focusOut()) tabindex="4">
+         <input type="text" #typeaheadInput [value]="typeaheadInputVal" placeholder="Choose a Country..." class="" autocomplete="off" [formControl]="searchFilterControl" (keydown.tab)=(focusOut()) tabindex="4">
       </li>
    </ul>
    <div class="typeahead-drop" *ngIf="typeaheadInFocus">
